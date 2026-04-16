@@ -8,7 +8,7 @@ Turn any audio into stunning visuals. Powered by the legendary Milkdrop engine (
 
 ## Download
 
-**[Download Kaleido Pro v1.0](https://github.com/kaleido-app-macos/kaleido-app-macos.github.io/releases/latest/download/KaleidoPro-v1.0.zip)** (30 MB)
+**[Download Kaleido Pro v1.0](https://github.com/kaleido-app-macos/kaleido-app-macos.github.io/releases/latest/download/KaleidoPro-v1.0.dmg)** (30 MB)
 
 24-hour free trial. No account needed.
 
@@ -16,8 +16,8 @@ Turn any audio into stunning visuals. Powered by the legendary Milkdrop engine (
 
 ## Installation
 
-1. Download the zip file
-2. Unzip and drag **Kaleido Pro.app** to your Applications folder
+1. Download the DMG file
+2. Open it and drag **Kaleido Pro.app** to your Applications folder
 3. Launch and enjoy
 
 ## Features
