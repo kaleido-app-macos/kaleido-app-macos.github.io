@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaleido Pro - Real-Time Music Visualizer for macOS</title>
+    <meta name="description" content="Kaleido Pro transforms your Mac into a mesmerizing music visualizer. 9,000+ visual presets that react to your music in real time. No cables, no configuration.">
+    <meta name="keywords" content="music visualizer, macOS, Milkdrop, projectM, audio visualizer, real-time, Mac app, DJ visuals, VJ software">
+    <meta property="og:title" content="Kaleido Pro - Real-Time Music Visualizer for macOS">
+    <meta property="og:description" content="Turn any audio into stunning visuals. 9,000+ Milkdrop presets, system audio capture, microphone input. One-time purchase.">
+    <meta property="og:image" content="https://kaleido-app-macos.github.io/screenshot.png">
+    <meta property="og:url" content="https://kaleido-app-macos.github.io">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(120, 80, 255, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero .tagline {
+            font-size: 1.4rem;
+            color: #999;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .screenshot {
+            max-width: 900px;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08);
+            margin-bottom: 3rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            border-radius: 10px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #7c3aed, #6d28d9);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            color: #e0e0e0;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.14);
+            transform: translateY(-2px);
+        }
+
+        .trial-note {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Features */
+        .features {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .features h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #fff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 2rem;
+            transition: border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(124, 58, 237, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #888;
+        }
+
+        /* Use cases */
+        .use-cases {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+            text-align: center;
+        }
+
+        .use-cases h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #fff;
+        }
+
+        .use-cases-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+        }
+
+        .use-case-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 100px;
+            padding: 0.6rem 1.4rem;
+            font-size: 0.95rem;
+            color: #aaa;
+        }
+
+        /* Requirements */
+        .requirements {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+            text-align: center;
+        }
+
+        .requirements h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .requirements p {
+            color: #777;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            color: #555;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: #777;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #aaa;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero .tagline { font-size: 1.1rem; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 100%; max-width: 300px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <h1>Kaleido Pro</h1>
+    <p class="tagline">Real-time music visualizer for macOS. Turn any audio into stunning visuals.</p>
+    <img src="screenshot.png" alt="Kaleido Pro music visualization" class="screenshot">
+    <div class="cta-buttons">
+        <a href="https://kaleidopro.lemonsqueezy.com/checkout/buy/e9d3c949-af7b-496b-9787-533dd30e56d4" class="btn btn-primary">Buy Kaleido Pro</a>
+        <a href="https://kaleidopro.lemonsqueezy.com/checkout/buy/e9d3c949-af7b-496b-9787-533dd30e56d4" class="btn btn-secondary">Download Free Trial</a>
+    </div>
+    <p class="trial-note">24-hour free trial. One-time purchase. No subscription.</p>
+</section>
+
+<section class="features">
+    <h2>Features</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">&#127925;</div>
+            <h3>9,000+ Visual Presets</h3>
+            <p>Milkdrop-compatible presets created by a worldwide community of visual artists. Every song looks different.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">&#127911;</div>
+            <h3>System Audio Capture</h3>
+            <p>Captures what your Mac is playing from any app &mdash; Spotify, Apple Music, YouTube, SoundCloud. No virtual audio drivers needed.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">&#127908;</div>
+            <h3>Microphone &amp; Audio Input</h3>
+            <p>Connect a microphone or audio interface for live performances, DJ setups, and events.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">&#9889;</div>
+            <h3>Smart Auto-Cycling</h3>
+            <p>Shuffle mode, timed transitions, and audio-reactive switching that changes presets when the music changes.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">&#11088;</div>
+            <h3>Curate Your Collection</h3>
+            <p>Star your favorites, blocklist presets you don't like, filter to audio-reactive only. Make it yours.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">&#128308;</div>
+            <h3>Adaptive Performance</h3>
+            <p>Automatic quality adjustment keeps visuals smooth. Presets that can't maintain 30 FPS are skipped automatically.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">&#128202;</div>
+            <h3>Spectrum Analyzer</h3>
+            <p>Real-time frequency spectrum overlay shows you exactly what the visualizer is hearing.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">&#128421;</div>
+            <h3>Full-Screen &amp; Projector Ready</h3>
+            <p>Immersive full-screen mode perfect for projector setups at parties, bars, and live events.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">&#129309;</div>
+            <h3>Powered by projectM</h3>
+            <p>Built on the legendary open-source Milkdrop visualization engine. Two decades of community-driven visual artistry.</p>
+        </div>
+    </div>
+</section>
+
+<section class="use-cases">
+    <h2>Perfect for</h2>
+    <div class="use-cases-list">
+        <span class="use-case-tag">Music lovers</span>
+        <span class="use-case-tag">DJs &amp; VJs</span>
+        <span class="use-case-tag">Streamers</span>
+        <span class="use-case-tag">Party &amp; event visuals</span>
+        <span class="use-case-tag">Ambient displays</span>
+        <span class="use-case-tag">Bar &amp; lounge screens</span>
+        <span class="use-case-tag">Milkdrop nostalgia</span>
+        <span class="use-case-tag">Live performances</span>
+    </div>
+</section>
+
+<section class="requirements">
+    <h2>System Requirements</h2>
+    <p>macOS 14.2 (Sonoma) or later<br>Apple Silicon or Intel Mac with OpenGL support</p>
+    <p style="margin-top: 1rem;">One-time purchase. Works on up to 5 Macs with a single license.</p>
+</section>
+
+<footer>
+    <p>&copy; 2026 Stephen Roth. Built with <a href="https://github.com/projectM-visualizer/projectm" target="_blank">projectM</a> (LGPL-2.1).</p>
+</footer>
+
+</body>
+</html>
