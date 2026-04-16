@@ -18,7 +18,8 @@ Turn any audio into stunning visuals. Powered by the legendary Milkdrop engine (
 
 1. Download the DMG file
 2. Open it and drag **Kaleido Pro.app** to your Applications folder
-3. Launch and enjoy
+3. **First launch:** Right-click the app and choose "Open" (macOS requires this for all downloaded apps)
+4. Launch and enjoy
 
 ## Features
 
