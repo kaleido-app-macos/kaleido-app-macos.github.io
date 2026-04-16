@@ -18,8 +18,14 @@ Turn any audio into stunning visuals. Powered by the legendary Milkdrop engine (
 
 1. Download the DMG file
 2. Open it and drag **Kaleido Pro.app** to your Applications folder
-3. **First launch:** Right-click the app and choose "Open" (macOS requires this for all downloaded apps)
-4. Launch and enjoy
+3. **First launch** — macOS blocks all downloaded apps on first launch. When you see the warning:
+   - Click **Done** on the warning dialog
+   - Open **System Settings > Privacy & Security**
+   - Scroll down to the **Security** section
+   - Find *"Kaleido Pro.app was blocked"* and click **Open Anyway**
+   - Enter your password when prompted
+   - This is a one-time step. After this, the app opens normally.
+4. Launch and enjoy — 24-hour free trial, no account needed
 
 ## Features
 
