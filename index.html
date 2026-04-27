@@ -114,6 +114,41 @@
             color: #666;
         }
 
+        /* Video */
+        .video-section {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .video-section h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #fff;
+        }
+
+        .video-section .video-subtitle {
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 2rem;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08);
+            background: #000;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            display: block;
+        }
+
         /* Features */
         .features {
             max-width: 1000px;
@@ -254,6 +289,16 @@
         <a href="https://kaleidopro.lemonsqueezy.com/checkout/buy/e9d3c949-af7b-496b-9787-533dd30e56d4" class="btn btn-secondary">Buy License</a>
     </div>
     <p class="trial-note">24-hour free trial. One-time purchase. No subscription.</p>
+</section>
+
+<section class="video-section">
+    <h2>See It In Action</h2>
+    <p class="video-subtitle">Features overview and how-to guide &mdash; 5 minutes</p>
+    <div class="video-wrapper">
+        <video controls preload="none" poster="screenshot.png">
+            <source src="https://github.com/kaleido-app-macos/kaleido-app-macos.github.io/releases/download/v1.0/kaleido-pro-demo.mp4" type="video/mp4">
+        </video>
+    </div>
 </section>
 
 <section class="features">
