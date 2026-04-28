@@ -12,7 +12,7 @@ Turn any audio into stunning visuals. Powered by the legendary Milkdrop engine (
 
 24-hour free trial. No account needed.
 
-**[Buy License](https://kaleidopro.lemonsqueezy.com/checkout/buy/e9d3c949-af7b-496b-9787-533dd30e56d4)** — One-time purchase. No subscription. Works on up to 5 Macs.
+**[Buy License](https://kaleidopro.lemonsqueezy.com/checkout/buy/9a18a572-7e00-4038-9b99-46994d0fe7b8)** — One-time purchase. No subscription. Works on up to 5 Macs.
 
 ## Installation
 
